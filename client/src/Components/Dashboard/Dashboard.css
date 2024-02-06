@@ -1,0 +1,24 @@
+.dashboard {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.dashboard .dashboard-box {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.dashboard .dashboard-box h1 {
+    text-align: center;
+    text-decoration: 4px solid #000 underline;
+}
+.dashboard .dashboard-box img {
+    width: 50%;
+}
+.dashboard .dashboard-box h2 {
+    margin-bottom: -15px;
+}
