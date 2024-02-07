@@ -5,6 +5,8 @@ import Home from './Components/Home/Home';
 import Header from './Components/Header/Header';
 import Login from './Components/Login/Login';
 import Dashboard from './Components/Dashboard/Dashboard';
+import ProtectedRoute from './pages/ProtectedRoute';
+import PublicRoute from './pages/PublicRouter';
 
 
 function App() {
@@ -13,10 +15,10 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/register' element={<Register />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/' element={<PublicRoute><Home /></PublicRoute>} />
+          <Route path='/register' element={<PublicRoute><Register /></PublicRoute>} />
+          <Route path='/login' element={<PublicRoute><Login /></PublicRoute>} />
+          <Route path='/dashboard' element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
         </Routes>
       </BrowserRouter>
     </div>

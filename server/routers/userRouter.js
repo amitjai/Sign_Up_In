@@ -40,7 +40,6 @@ router.post('/login', async (req, res) => {
         } else {
             const result = userExists._doc;
             const token = jwt.sign({ id: userExists._id }, process.env.JWT_SECRET, { expiresIn: "1d" });
-            await userExists.tokens.push({ token: token });
             res.status(200).json({ message: "successfully login", success: true, result, token });
         }
 
@@ -51,7 +50,7 @@ router.post('/login', async (req, res) => {
     }
 });
 
-router.get('/get_user_info', authMiddleware, async (req, res) => {
+router.post('/get_user_info', authMiddleware, async (req, res) => {
 
     try {
         const userExists = await User.findById({ _id: req.body.userId });

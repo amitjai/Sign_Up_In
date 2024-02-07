@@ -21,7 +21,6 @@ function Login() {
     try {
       const res = await axios.post("/login", userInput);
       if (res.data.success) {
-        console.log(res.data.token);
         localStorage.setItem("token", res.data.token);
         alert(res.data.message);
         navigate("/dashboard");

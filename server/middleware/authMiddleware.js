@@ -12,7 +12,8 @@ export default (req, res, next) => {
                     success: false
                 });
             } else {
-                req.body.userId = decode._id;
+                req.body.userId = decode.id;
+                console.log(req.body.userId);
                 next();
             }
         });

@@ -10,24 +10,12 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         lowercase: true,
-        unique: true,
-        validate(value) {
-            if (!validator.isEmail(value)) {
-                throw new Error("not valid email")
-            }
-        }
     },
     password: {
         type: String,
         required: true,
         minlength: 6
     },
-    tokens: [{
-        token: {
-            type: String,
-            required: true
-        }
-    }]
 
 
 }, { timeseries: true });
